@@ -1,0 +1,102 @@
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-07-14 18:31 CEST
+NSE: Loaded 146 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 18:31
+Completed NSE at 18:31, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 18:31
+Completed NSE at 18:31, 0.00s elapsed
+Initiating Ping Scan at 18:31
+Scanning 10.10.10.185 [4 ports]
+Completed Ping Scan at 18:31, 0.23s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 18:31
+Completed Parallel DNS resolution of 1 host. at 18:31, 0.00s elapsed
+DNS resolution of 1 IPs took 0.00s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 18:31
+Scanning 10.10.10.185 [1000 ports]
+Discovered open port 22/tcp on 10.10.10.185
+Discovered open port 80/tcp on 10.10.10.185
+Increasing send delay for 10.10.10.185 from 0 to 5 due to 290 out of 966 dropped probes since last increase.
+Increasing send delay for 10.10.10.185 from 5 to 10 due to 29 out of 96 dropped probes since last increase.
+Increasing send delay for 10.10.10.185 from 10 to 20 due to max_successful_tryno increase to 4
+Increasing send delay for 10.10.10.185 from 20 to 40 due to max_successful_tryno increase to 5
+Increasing send delay for 10.10.10.185 from 40 to 80 due to 11 out of 33 dropped probes since last increase.
+Increasing send delay for 10.10.10.185 from 80 to 160 due to 11 out of 25 dropped probes since last increase.
+Increasing send delay for 10.10.10.185 from 160 to 320 due to 11 out of 25 dropped probes since last increase.
+Completed SYN Stealth Scan at 18:32, 23.78s elapsed (1000 total ports)
+Initiating Service scan at 18:32
+Scanning 2 services on 10.10.10.185
+Completed Service scan at 18:32, 6.12s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 10.10.10.185
+Retrying OS detection (try #2) against 10.10.10.185
+Retrying OS detection (try #3) against 10.10.10.185
+adjust_timeouts2: packet supposedly had rtt of -183481 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -183481 microseconds.  Ignoring time.
+Retrying OS detection (try #4) against 10.10.10.185
+Retrying OS detection (try #5) against 10.10.10.185
+Initiating Traceroute at 18:32
+Completed Traceroute at 18:32, 0.05s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 18:32
+Completed Parallel DNS resolution of 2 hosts. at 18:32, 0.04s elapsed
+DNS resolution of 2 IPs took 0.04s. Mode: Async [#: 1, OK: 0, NX: 2, DR: 0, SF: 0, TR: 2, CN: 0]
+NSE: Script scanning 10.10.10.185.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 18:32
+Completed NSE at 18:32, 3.02s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 18:32
+Completed NSE at 18:32, 0.00s elapsed
+Nmap scan report for 10.10.10.185
+Host is up, received echo-reply ttl 63 (0.050s latency).
+Scanned at 2020-07-14 18:31:51 CEST for 49s
+Not shown: 998 closed ports
+Reason: 998 resets
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 06:d4:89:bf:51:f7:fc:0c:f9:08:5e:97:63:64:8d:ca (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClcZO7AyXva0myXqRYz5xgxJ8ljSW1c6xX0vzHxP/Qy024qtSuDeQIRZGYsIR+kyje39aNw6HHxdz50XSBSEcauPLDWbIYLUMM+a0smh7/pRjfA+vqHxEp7e5l9H7Nbb1dzQesANxa1glKsEmKi1N8Yg0QHX0/FciFt1rdES9Y4b3I3gse2mSAfdNWn4ApnGnpy1tUbanZYdRtpvufqPWjzxUkFEnFIPrslKZoiQ+MLnp77DXfIm3PGjdhui0PBlkebTGbgo4+U44fniEweNJSkiaZW/CuKte0j/buSlBlnagzDl0meeT8EpBOPjk+F0v6Yr7heTuAZn75pO3l5RHX
+|   256 11:a6:92:98:ce:35:40:c7:29:09:4f:6c:2d:74:aa:66 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOVyH7ButfnaTRJb0CdXzeCYFPEmm6nkSUd4d52dW6XybW9XjBanHE/FM4kZ7bJKFEOaLzF1lDizNQgiffGWWLQ=
+|   256 71:05:99:1f:a8:1b:14:d6:03:85:53:f8:78:8e:cb:88 (EdDSA)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0dM4nfekm9dJWdTux9TqCyCGtW5rbmHfh/4v3NtTU1
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.29 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Magic Portfolio
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=7/14%OT=22%CT=1%CU=44180%PV=Y%DS=2%DC=T%G=Y%TM=5F0DDE2
+OS:8%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10D%TI=Z%CI=Z%TS=A)OPS(O1=M
+OS:54DST11NW7%O2=M54DST11NW7%O3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST11NW7%
+OS:O6=M54DST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%
+OS:DF=Y%T=40%W=FAF0%O=M54DNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=
+OS:0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF
+OS:=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=
+OS:%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%
+OS:IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 26.754 days (since Thu Jun 18 00:26:22 2020)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 3306/tcp)
+HOP RTT      ADDRESS
+1   45.22 ms 10.10.14.1
+2   45.77 ms 10.10.10.185
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 18:32
+Completed NSE at 18:32, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 18:32
+Completed NSE at 18:32, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 49.71 seconds
+           Raw packets sent: 1808 (91.676KB) | Rcvd: 1409 (67.148KB)

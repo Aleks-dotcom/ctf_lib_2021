@@ -1,0 +1,4 @@
+break * set_mouse_name
+break * deactivate_trap
+break * grab_cheese
+

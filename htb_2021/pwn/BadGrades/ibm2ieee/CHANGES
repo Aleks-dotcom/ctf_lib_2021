@@ -1,0 +1,82 @@
+Changelog for ibm2ieee
+======================
+
+Release 1.1.0
+-------------
+
+Release date: 2021-01-10
+
+This minor release updates the supported Python versions, and makes
+various distributional and developer-facing changes. Python 2.7
+and Python 3.5 are no longer supported, and Python 3.9 is now
+explicitly supported. There are no changes to the functional core.
+
+- Move to using GitHub Actions for PR tests. (#22)
+
+- Add workflow to automatically build and publish wheels for
+   releases. (#20)
+
+- Update copyright header end year; update copyright header form to match the
+  official Enthought style used elsewhere in the Enthought Tool Suite, and
+  add a flake8 check for correct and up-to-date copyright headers. (#19)
+
+- Drop support for Python 2.7 and Python 3.5. The package now requires
+  Python >= 3.6. (#18)
+
+- Add explicit support for Python 3.9. (#17)
+
+
+Release 1.0.2
+-------------
+
+Release date: 2020-02-09
+
+This is a bugfix release, addressing distribution and development
+issues along with minor cleanups to the core.
+
+- Require NumPy >= 1.14.5 at runtime; build against NumPy == 1.14.5
+  at installation time. (PR #8)
+- Replace the ``packaging`` dependency of the test suite with
+  ``setuptools``; add explicit dependency of the test suite on ``six``.
+  (PR #11)
+- Add classifiers for Python 3.7 and 3.8, and add Python 3.7 and 3.8
+  to the test matrix for Travis and Appveyor. (PR #8)
+- Silence some current and future compiler and linter warnings in
+  the core C code. (PR #15)
+- Apply a micro-optimization for the 64-bit IBM to 32-bit IEEE conversion,
+  replacing a 64-bit addition with a 32-bit addition. (PR #15)
+
+
+Release 1.0.1
+-------------
+
+Release date: 2018-12-04
+
+Bugfix release, fixing another distribution issue.
+
+- Add ``pyproject.toml`` file encapsulating build requirements. With this, a
+  ``pip install ibm2ieee`` should automatically download NumPy before
+  running the setup script. (PR #7)
+
+
+Release 1.0.0
+-------------
+
+Release date: 2018-12-04
+
+First real release. Fixes some distribution issues with the 0.1.0 release. Code is
+otherwise unchanged.
+
+- Fix misuse of ``unicode_literals`` in the setup.py file.
+- Fix trailing newline in short description, which caused the README not
+  to render properly on PyPI.
+- Boldly bump the version number to 1.0.0, and the Development Status classifier
+  to Production/Stable.
+
+
+Release 0.1.0
+-------------
+
+Release date: 2018-12-04
+
+Initial release uploaded to PyPI.

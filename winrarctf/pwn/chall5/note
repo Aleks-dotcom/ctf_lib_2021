@@ -1,0 +1,8 @@
+leak:
+	size pretains on description size:
+	create size 2000 [0]
+	create size 10 [1]
+	free size 2000 [0]
+	create size 2000 [0]
+	add 8 bytes [0]
+	view [0]

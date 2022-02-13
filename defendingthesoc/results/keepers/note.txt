@@ -1,0 +1,5 @@
+# Jenkins Development Server
+# This is a development server
+# default credentials - ssh
+# username: root
+# password: alpine_r00t

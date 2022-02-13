@@ -1,0 +1,2 @@
+tekmovalcem das lahko vse razen skripte sol.py in pa flaga. Obvezno moras dat pa libc, ld, vec.cpp in vec
+popravi flag!

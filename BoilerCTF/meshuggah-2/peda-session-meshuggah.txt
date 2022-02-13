@@ -1,0 +1,3 @@
+break win
+break buy_starship
+

@@ -1,0 +1,7 @@
+break * set_mouse_name
+disable $bpnum
+break * deactivate_trap
+disable $bpnum
+break * grab_cheese
+disable $bpnum
+

@@ -1,0 +1,114 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-07-09 15:29 CEST
+NSE: Loaded 146 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 15:29
+Completed NSE at 15:29, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 15:29
+Completed NSE at 15:29, 0.00s elapsed
+Initiating Ping Scan at 15:29
+Scanning 10.10.10.191 [4 ports]
+Completed Ping Scan at 15:29, 0.22s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 15:29
+Completed Parallel DNS resolution of 1 host. at 15:29, 0.01s elapsed
+DNS resolution of 1 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 15:29
+Scanning 10.10.10.191 [65535 ports]
+Discovered open port 80/tcp on 10.10.10.191
+SYN Stealth Scan Timing: About 2.82% done; ETC: 15:48 (0:17:47 remaining)
+SYN Stealth Scan Timing: About 6.74% done; ETC: 15:44 (0:14:05 remaining)
+SYN Stealth Scan Timing: About 8.34% done; ETC: 15:47 (0:16:40 remaining)
+SYN Stealth Scan Timing: About 9.32% done; ETC: 15:51 (0:19:37 remaining)
+SYN Stealth Scan Timing: About 13.06% done; ETC: 15:49 (0:16:45 remaining)
+SYN Stealth Scan Timing: About 17.69% done; ETC: 15:48 (0:15:40 remaining)
+SYN Stealth Scan Timing: About 20.84% done; ETC: 15:48 (0:14:41 remaining)
+SYN Stealth Scan Timing: About 25.36% done; ETC: 15:48 (0:13:44 remaining)
+SYN Stealth Scan Timing: About 32.02% done; ETC: 15:48 (0:12:46 remaining)
+SYN Stealth Scan Timing: About 36.52% done; ETC: 15:48 (0:11:46 remaining)
+SYN Stealth Scan Timing: About 40.17% done; ETC: 15:47 (0:10:49 remaining)
+SYN Stealth Scan Timing: About 44.43% done; ETC: 15:47 (0:09:54 remaining)
+SYN Stealth Scan Timing: About 49.03% done; ETC: 15:47 (0:08:57 remaining)
+SYN Stealth Scan Timing: About 54.15% done; ETC: 15:47 (0:08:04 remaining)
+SYN Stealth Scan Timing: About 58.59% done; ETC: 15:46 (0:07:07 remaining)
+SYN Stealth Scan Timing: About 63.48% done; ETC: 15:46 (0:06:15 remaining)
+SYN Stealth Scan Timing: About 68.59% done; ETC: 15:46 (0:05:22 remaining)
+SYN Stealth Scan Timing: About 73.40% done; ETC: 15:46 (0:04:30 remaining)
+SYN Stealth Scan Timing: About 78.49% done; ETC: 15:46 (0:03:37 remaining)
+SYN Stealth Scan Timing: About 83.86% done; ETC: 15:46 (0:02:45 remaining)
+SYN Stealth Scan Timing: About 89.10% done; ETC: 15:46 (0:01:51 remaining)
+SYN Stealth Scan Timing: About 94.14% done; ETC: 15:46 (0:01:00 remaining)
+Completed SYN Stealth Scan at 15:46, 1025.55s elapsed (65535 total ports)
+Initiating Service scan at 15:46
+Scanning 1 service on 10.10.10.191
+Completed Service scan at 15:47, 12.69s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 10.10.10.191
+Retrying OS detection (try #2) against 10.10.10.191
+Initiating Traceroute at 15:47
+Completed Traceroute at 15:47, 0.35s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 15:47
+Completed Parallel DNS resolution of 2 hosts. at 15:47, 0.01s elapsed
+DNS resolution of 2 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 2, DR: 0, SF: 0, TR: 2, CN: 0]
+NSE: Script scanning 10.10.10.191.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 15:47
+Completed NSE at 15:47, 4.45s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 15:47
+Completed NSE at 15:47, 0.00s elapsed
+Nmap scan report for 10.10.10.191
+Host is up, received echo-reply ttl 63 (0.22s latency).
+Scanned at 2020-07-09 15:29:47 CEST for 1049s
+Not shown: 65533 filtered ports
+Reason: 65533 no-responses
+PORT   STATE  SERVICE REASON         VERSION
+21/tcp closed ftp     reset ttl 63
+80/tcp open   http    syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu))
+|_http-favicon: Unknown favicon MD5: A0F0E5D852F0E3783AF700B6EE9D00DA
+|_http-generator: Blunder
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Blunder | A blunder of interesting facts
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+Aggressive OS guesses: HP P2000 G3 NAS device (91%), Linux 2.6.32 - 3.13 (89%), Linux 3.0 - 3.2 (89%), Linux 2.6.32 (89%), OpenWrt Kamikaze 7.09 (Linux 2.6.22) (89%), Linux 2.6.32 - 3.1 (89%), Infomir MAG-250 set-top box (89%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (89%), Linux 3.7 (89%), Netgear RAIDiator 4.2.21 (Linux 2.6.37) (89%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.60%E=4%D=7/9%OT=80%CT=21%CU=%PV=Y%DS=2%DC=T%G=N%TM=5F071FE4%P=x86_64-pc-linux-gnu)
+SEQ(SP=E5%GCD=1%ISR=FD%TI=Z%CI=Z%TS=C)
+SEQ(SP=FF%GCD=1%ISR=101%TI=Z%CI=Z%II=I%TS=A)
+OPS(O1=M54DST11NW7%O2=M54DST11NW7%O3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST11NW7%O6=M54DST11)
+WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)
+ECN(R=Y%DF=Y%TG=40%W=FAF0%O=M54DNNSNW7%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=N)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+
+Uptime guess: 36.907 days (since Tue Jun  2 18:01:00 2020)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=255 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE (using port 21/tcp)
+HOP RTT       ADDRESS
+1   44.07 ms  10.10.14.1
+2   340.83 ms 10.10.10.191
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 15:47
+Completed NSE at 15:47, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 15:47
+Completed NSE at 15:47, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1049.80 seconds
+           Raw packets sent: 131847 (5.805MB) | Rcvd: 693 (28.572KB)

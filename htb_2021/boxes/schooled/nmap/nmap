@@ -1,0 +1,38 @@
+# Nmap 7.60 scan initiated Sun Apr 11 17:40:35 2021 as: nmap -sC -sV -A -oN nmap/nmap 10.10.10.234
+Nmap scan report for 10.10.10.234
+Host is up (0.056s latency).
+Not shown: 770 filtered ports, 228 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9 (FreeBSD 20200214; protocol 2.0)
+| ssh-hostkey: 
+|   2048 1d:69:83:78:fc:91:f8:19:c8:75:a7:1e:76:45:05:dc (RSA)
+|   256 e9:b2:d2:23:9d:cf:0e:63:e0:6d:b9:b1:a6:86:93:38 (ECDSA)
+|_  256 7f:51:88:f7:3c:dd:77:5e:ba:25:4d:4c:09:25:ea:1f (EdDSA)
+80/tcp open  http    Apache httpd 2.4.46 ((FreeBSD) PHP/7.4.15)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.46 (FreeBSD) PHP/7.4.15
+|_http-title: Schooled - A new kind of educational institute
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=4/11%OT=22%CT=19%CU=31881%PV=Y%DS=2%DC=T%G=Y%TM=607318
+OS:8F%P=x86_64-pc-linux-gnu)SEQ(SP=100%GCD=1%ISR=FF%TI=Z%CI=Z%TS=21)OPS(O1=
+OS:M54DNW6ST11%O2=M54DNW6ST11%O3=M54DNW6NNT11%O4=M54DNW6ST11%O5=M54DNW6ST11
+OS:%O6=M54DST11)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(R=Y
+OS:%DF=Y%T=40%W=FFFF%O=M54DNW6SLL%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD
+OS:=0%Q=)T2(R=N)T3(R=Y%DF=Y%T=40%W=FFFF%S=O%A=S+%F=AS%O=M54DNW6ST11%RD=0%Q=
+OS:)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=
+OS:S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF
+OS:=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=
+OS:G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=S%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
+
+TRACEROUTE (using port 8888/tcp)
+HOP RTT      ADDRESS
+1   61.56 ms 10.10.14.1
+2   63.55 ms 10.10.10.234
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Apr 11 17:41:03 2021 -- 1 IP address (1 host up) scanned in 28.60 seconds

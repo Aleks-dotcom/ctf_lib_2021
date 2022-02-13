@@ -1,0 +1,136 @@
+# Nmap 7.60 scan initiated Fri Jul 30 12:05:31 2021 as: nmap -sS -sC -sV -A -vvv -oN nmap/nmap 10.10.10.225
+adjust_timeouts2: packet supposedly had rtt of -184512 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -184512 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -134382 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -134382 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -134960 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -134960 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -136574 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -136574 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -138400 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -138400 microseconds.  Ignoring time.
+Nmap scan report for 10.10.10.225
+Host is up, received echo-reply ttl 63 (0.042s latency).
+Scanned at 2021-07-30 12:05:31 CEST for 102s
+Not shown: 997 closed ports
+Reason: 997 resets
+PORT     STATE SERVICE REASON         VERSION
+22/tcp   open  ssh     syn-ack ttl 63 OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+3000/tcp open  ppp?    syn-ack ttl 63
+| fingerprint-strings: 
+|   GenericLines, Help: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gitea=43311c01a1eb6027; Path=/; HttpOnly
+|     Set-Cookie: _csrf=D-TPfFtKg-TRtYkBYIprx8tMkxk6MTYyNzY0MDMyNTM3MjgzNzc2NA; Path=/; Expires=Sat, 31 Jul 2021 10:18:45 GMT; HttpOnly
+|     X-Frame-Options: SAMEORIGIN
+|     Date: Fri, 30 Jul 2021 10:18:45 GMT
+|     <!DOCTYPE html>
+|     <html lang="en-US" class="theme-">
+|     <head data-suburl="">
+|     <meta charset="utf-8">
+|     <meta name="viewport" content="width=device-width, initial-scale=1">
+|     <meta http-equiv="x-ua-compatible" content="ie=edge">
+|     <title> Gitea: Git with a cup of tea </title>
+|     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+|     <meta name="theme-color" content="#6cc644">
+|     <meta name="author" content="Gitea - Git with a cup of tea" />
+|     <meta name="description" content="Gitea (Git with a cup of tea) is a painless
+|   HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gitea=104e6ff9b1a5368a; Path=/; HttpOnly
+|     Set-Cookie: _csrf=8DDKF12KPJw8J6c7nCa9EGDIKzc6MTYyNzY0MDMzMDcwODUxNDAwNg; Path=/; Expires=Sat, 31 Jul 2021 10:18:50 GMT; HttpOnly
+|     X-Frame-Options: SAMEORIGIN
+|     Date: Fri, 30 Jul 2021 10:18:50 GMT
+|     <!DOCTYPE html>
+|     <html lang="en-US" class="theme-">
+|     <head data-suburl="">
+|     <meta charset="utf-8">
+|     <meta name="viewport" content="width=device-width, initial-scale=1">
+|     <meta http-equiv="x-ua-compatible" content="ie=edge">
+|     <title>Page Not Found - Gitea: Git with a cup of tea </title>
+|     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+|     <meta name="theme-color" content="#6cc644">
+|     <meta name="author" content="Gitea - Git with a cup of tea" />
+|_    <meta name="description" content="Gitea (Git with a c
+5000/tcp open  http    syn-ack ttl 62 Gunicorn 20.0.0
+| http-methods: 
+|_  Supported Methods: POST HEAD OPTIONS GET
+|_http-server-header: gunicorn/20.0.0
+|_http-title: Sink Devops
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3000-TCP:V=7.60%I=7%D=7/30%Time=6103CEF4%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(GetRequest,2943,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\
+SF:x20text/html;\x20charset=UTF-8\r\nSet-Cookie:\x20lang=en-US;\x20Path=/;
+SF:\x20Max-Age=2147483647\r\nSet-Cookie:\x20i_like_gitea=43311c01a1eb6027;
+SF:\x20Path=/;\x20HttpOnly\r\nSet-Cookie:\x20_csrf=D-TPfFtKg-TRtYkBYIprx8t
+SF:Mkxk6MTYyNzY0MDMyNTM3MjgzNzc2NA;\x20Path=/;\x20Expires=Sat,\x2031\x20Ju
+SF:l\x202021\x2010:18:45\x20GMT;\x20HttpOnly\r\nX-Frame-Options:\x20SAMEOR
+SF:IGIN\r\nDate:\x20Fri,\x2030\x20Jul\x202021\x2010:18:45\x20GMT\r\n\r\n<!
+SF:DOCTYPE\x20html>\n<html\x20lang=\"en-US\"\x20class=\"theme-\">\n<head\x
+SF:20data-suburl=\"\">\n\t<meta\x20charset=\"utf-8\">\n\t<meta\x20name=\"v
+SF:iewport\"\x20content=\"width=device-width,\x20initial-scale=1\">\n\t<me
+SF:ta\x20http-equiv=\"x-ua-compatible\"\x20content=\"ie=edge\">\n\t<title>
+SF:\x20Gitea:\x20Git\x20with\x20a\x20cup\x20of\x20tea\x20</title>\n\t<link
+SF:\x20rel=\"manifest\"\x20href=\"/manifest\.json\"\x20crossorigin=\"use-c
+SF:redentials\">\n\t<meta\x20name=\"theme-color\"\x20content=\"#6cc644\">\
+SF:n\t<meta\x20name=\"author\"\x20content=\"Gitea\x20-\x20Git\x20with\x20a
+SF:\x20cup\x20of\x20tea\"\x20/>\n\t<meta\x20name=\"description\"\x20conten
+SF:t=\"Gitea\x20\(Git\x20with\x20a\x20cup\x20of\x20tea\)\x20is\x20a\x20pai
+SF:nless")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\
+SF:x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20B
+SF:ad\x20Request")%r(HTTPOptions,206D,"HTTP/1\.0\x20404\x20Not\x20Found\r\
+SF:nContent-Type:\x20text/html;\x20charset=UTF-8\r\nSet-Cookie:\x20lang=en
+SF:-US;\x20Path=/;\x20Max-Age=2147483647\r\nSet-Cookie:\x20i_like_gitea=10
+SF:4e6ff9b1a5368a;\x20Path=/;\x20HttpOnly\r\nSet-Cookie:\x20_csrf=8DDKF12K
+SF:PJw8J6c7nCa9EGDIKzc6MTYyNzY0MDMzMDcwODUxNDAwNg;\x20Path=/;\x20Expires=S
+SF:at,\x2031\x20Jul\x202021\x2010:18:50\x20GMT;\x20HttpOnly\r\nX-Frame-Opt
+SF:ions:\x20SAMEORIGIN\r\nDate:\x20Fri,\x2030\x20Jul\x202021\x2010:18:50\x
+SF:20GMT\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en-US\"\x20class=\"the
+SF:me-\">\n<head\x20data-suburl=\"\">\n\t<meta\x20charset=\"utf-8\">\n\t<m
+SF:eta\x20name=\"viewport\"\x20content=\"width=device-width,\x20initial-sc
+SF:ale=1\">\n\t<meta\x20http-equiv=\"x-ua-compatible\"\x20content=\"ie=edg
+SF:e\">\n\t<title>Page\x20Not\x20Found\x20-\x20\x20Gitea:\x20Git\x20with\x
+SF:20a\x20cup\x20of\x20tea\x20</title>\n\t<link\x20rel=\"manifest\"\x20hre
+SF:f=\"/manifest\.json\"\x20crossorigin=\"use-credentials\">\n\t<meta\x20n
+SF:ame=\"theme-color\"\x20content=\"#6cc644\">\n\t<meta\x20name=\"author\"
+SF:\x20content=\"Gitea\x20-\x20Git\x20with\x20a\x20cup\x20of\x20tea\"\x20/
+SF:>\n\t<meta\x20name=\"description\"\x20content=\"Gitea\x20\(Git\x20with\
+SF:x20a\x20c");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=7/30%OT=22%CT=1%CU=32579%PV=Y%DS=2%DC=T%G=Y%TM=6103CF5
+OS:1%P=x86_64-pc-linux-gnu)SEQ(SP=107%GCD=1%ISR=10D%TI=Z%CI=Z%TS=A)SEQ(SP=1
+OS:07%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M54DST11NW7%O2=M54DST11NW7%O
+OS:3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST11NW7%O6=M54DST11)WIN(W1=FE88%W2=
+OS:FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M54DNNSN
+OS:W7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%D
+OS:F=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O
+OS:=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W
+OS:=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%R
+OS:IPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 7.015 days (since Fri Jul 23 11:46:17 2021)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=263 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 111/tcp)
+HOP RTT      ADDRESS
+1   42.56 ms 10.10.14.1
+2   44.13 ms 10.10.10.225
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jul 30 12:07:13 2021 -- 1 IP address (1 host up) scanned in 102.70 seconds

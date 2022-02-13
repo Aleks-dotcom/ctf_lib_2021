@@ -1,0 +1,5 @@
+break * close_borders
+break * lose1
+break * lose3
+
+

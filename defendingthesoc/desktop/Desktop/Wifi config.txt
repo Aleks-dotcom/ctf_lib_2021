@@ -1,0 +1,2 @@
+SSID: MOVISTAR_56F7
+Pwd: barcelona1

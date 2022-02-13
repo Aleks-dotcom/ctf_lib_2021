@@ -1,0 +1,23 @@
+# Nmap 7.60 scan initiated Thu Apr  1 17:44:01 2021 as: nmap -sS -sC -sV -oN nmap/nmap.nmap -vvv 10.10.10.226
+Increasing send delay for 10.10.10.226 from 0 to 5 due to 278 out of 926 dropped probes since last increase.
+Increasing send delay for 10.10.10.226 from 10 to 20 due to 14 out of 46 dropped probes since last increase.
+Increasing send delay for 10.10.10.226 from 40 to 80 due to 11 out of 29 dropped probes since last increase.
+Increasing send delay for 10.10.10.226 from 80 to 160 due to 11 out of 26 dropped probes since last increase.
+Increasing send delay for 10.10.10.226 from 160 to 320 due to 11 out of 35 dropped probes since last increase.
+Nmap scan report for 10.10.10.226
+Host is up, received echo-reply ttl 63 (0.062s latency).
+Scanned at 2021-04-01 17:44:02 CEST for 32s
+Not shown: 998 closed ports
+Reason: 998 resets
+PORT     STATE SERVICE REASON         VERSION
+22/tcp   open  ssh     syn-ack ttl 63 OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+5000/tcp open  http    syn-ack ttl 63 Werkzeug httpd 0.16.1 (Python 3.8.5)
+| http-methods: 
+|_  Supported Methods: POST GET HEAD OPTIONS
+|_http-server-header: Werkzeug/0.16.1 Python/3.8.5
+|_http-title: k1d'5 h4ck3r t00l5
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr  1 17:44:34 2021 -- 1 IP address (1 host up) scanned in 32.86 seconds

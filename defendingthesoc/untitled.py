@@ -1,0 +1,3 @@
+tt = [29, 33, 35, 42, 44, 57, 66, 72, 81, 85, 88, 89, 97, 103, 128, 135, 144, 152, 195, 199, 203, 207, 217, 231, 236, 239, 245, 260, 266, 273, 292, 310, 319, 337, 354, 357, 366, 377, 385, 414, 418, 421]
+xbx = '--- BEGIN PRIVATE KEY ---\t\tfCfnaEldanaKJdiga{enDjsim28kgdblec2kjte47JmiecSJD42LJdkenJdra00bp\t\tcSbrdkeCisa4laXtfevdgAA5ochm1Quejd_i7tySu4tea8VcadrCcm9jvc34DnBkl\t\tvTkMtdLdte6Mgfd4Lmueoal6mlsuy3Voem_P2hun0jsfne3ndLu0de1jfrdNw9dje4\t\tcEudnmelop_5kneDf8pma3mdkiCoiw30meMmcrura2iN_suwk5kQmmeoA2mkljapod9\t\tcyXen2mtnFkl3uaEo7iuoriCd36unVec4kwjB3osduAs8idoN9iidMsp1JysWyd2\t\tudtm1eDemDciA3iljeCyenN8Moiu26aQiemCi9usjekL5CyejocuIe3yw}6nCaf\t\t--- END PRIVATE KEY ---'
+print('<' + ''.join([xbx[x] for x in tt]) + '>')

@@ -1,0 +1,17 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: rdlist
+START_TIME: Mon Apr 20 16:02:54 2020
+URL_BASE: https://treasure-map.cha.hackpack.club/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+OPTION: Not Stopping on warning messages
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: https://treasure-map.cha.hackpack.club/ ----

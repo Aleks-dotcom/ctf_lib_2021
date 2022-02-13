@@ -1,0 +1,15 @@
+FOOTHOLD:
+		-10.10.10.229->bucket.htb
+		-view source -> s3.bucket.htb (aws s3 buckets are prsent)
+		-read a lot of docs and get familiar with aws cli to be able to list objects and buckets 
+		-visiting the s3.bucket.htb/health we see that dynamodb is running
+		-there is also a /shell dir which makes a request on some random url(didnt look much past that)
+		-use aws cli to scan the dynamodb and we find some creds but none match for ssh
+		-we see that we can upload files on to the machine using aws cli and access them -> php rev shell
+USER:
+		-with the help of a shell we see that there is user roy on the box, we try some creds from before and one gets us in 
+
+ROOT:		-i tried a lot during this part and there are a lot of rabbit holes everywhere but there is one thing that, when found, basically tells you what needs to get done
+		-in /var/www/bucket-app/ we find index.php which has a random php function just at the beginngin which waits for POST requests and the makes querries to the dynamodb
+		-we control all the parameters of that querry so we can creat the table it is trying to querry and put in info that we want it to spit out.
+		-as the script wtrites contents of a file into pdf, we basically have some kind of RFI, we choose /root/.ssh/id_rsa to be included in the pdf and we get root shell 

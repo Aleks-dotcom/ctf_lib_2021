@@ -1,0 +1,99 @@
+# Nmap 7.60 scan initiated Thu Apr  8 20:53:59 2021 as: nmap -sS -sV -sC -A -oN nmap/nmap 10.10.10.227
+Nmap scan report for 10.10.10.227
+Host is up (0.048s latency).
+Not shown: 998 closed ports
+PORT     STATE SERVICE    VERSION
+22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+8080/tcp open  http-proxy
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 
+|     Set-Cookie: JSESSIONID=4119FB0AF1437D7B7D80C53F4242D2BE; Path=/; HttpOnly
+|     Content-Type: text/html;charset=UTF-8
+|     Content-Length: 8042
+|     Date: Thu, 08 Apr 2021 19:05:13 GMT
+|     Connection: close
+|     <html>
+|     <head>
+|     <title>Parse YAML</title>
+|     <style>
+|     html {
+|     background-color: #56baed;
+|     body {
+|     font-family: "Poppins", sans-serif;
+|     height: 100vh;
+|     color: #92badd;
+|     display:inline-block;
+|     text-decoration: none;
+|     font-weight: 400;
+|     text-align: center;
+|     font-size: 16px;
+|     font-weight: 600;
+|     text-transform: uppercase;
+|     display:inline-block;
+|     margin: 40px 8px 10px 8px;
+|     color: #cccccc;
+|     STRUCTURE */
+|   HTTPOptions: 
+|     HTTP/1.1 200 
+|     Allow: GET, HEAD, POST, OPTIONS
+|     Content-Length: 0
+|     Date: Thu, 08 Apr 2021 19:05:13 GMT
+|_    Connection: close
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Parse YAML
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8080-TCP:V=7.60%I=7%D=4/8%Time=606F5167%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,203B,"HTTP/1\.1\x20200\x20\r\nSet-Cookie:\x20JSESSIONID=4119FB0
+SF:AF1437D7B7D80C53F4242D2BE;\x20Path=/;\x20HttpOnly\r\nContent-Type:\x20t
+SF:ext/html;charset=UTF-8\r\nContent-Length:\x208042\r\nDate:\x20Thu,\x200
+SF:8\x20Apr\x202021\x2019:05:13\x20GMT\r\nConnection:\x20close\r\n\r\n\r\n
+SF:<html>\r\n<head>\r\n\x20\x20\x20\x20<title>Parse\x20YAML</title>\r\n\x2
+SF:0\x20\x20\x20<style>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20html\x20{\r
+SF:\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20
+SF:#56baed;\r\n\x20\x20\x20\x20\x20\x20\x20\x20}\r\n\r\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20body\x20{\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20font-family:\x20\"Poppins\",\x20sans-serif;\r\n\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20height:\x20100vh;\r\n\x20\x20\x20\x20\x20\x
+SF:20\x20\x20}\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20a\x20{\r\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#92badd;\r\n\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20display:inline-block;\r\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-decoration:\x20none;\r\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20400;\r\n\x
+SF:20\x20\x20\x20\x20\x20\x20\x20}\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20
+SF:h2\x20{\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\
+SF:x20center;\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size
+SF::\x2016px;\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weig
+SF:ht:\x20600;\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-tra
+SF:nsform:\x20uppercase;\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20display:inline-block;\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20margin:\x2040px\x208px\x2010px\x208px;\r\n\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20color:\x20#cccccc;\r\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20}\r\n\r\n\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20/\*\x20STRUCTURE
+SF:\x20\*/\r\n\r")%r(HTTPOptions,7D,"HTTP/1\.1\x20200\x20\r\nAllow:\x20GET
+SF:,\x20HEAD,\x20POST,\x20OPTIONS\r\nContent-Length:\x200\r\nDate:\x20Thu,
+SF:\x2008\x20Apr\x202021\x2019:05:13\x20GMT\r\nConnection:\x20close\r\n\r\
+SF:n");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=4/8%OT=22%CT=1%CU=34894%PV=Y%DS=2%DC=T%G=Y%TM=606F5180
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=108%TI=Z%CI=Z%TS=A)SEQ(SP=10
+OS:4%GCD=1%ISR=108%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M54DST11NW7%O2=M54DST11NW7%O3
+OS:=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST11NW7%O6=M54DST11)WIN(W1=FE88%W2=F
+OS:E88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M54DNNSNW
+OS:7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF
+OS:=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=
+OS:%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=
+OS:0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RI
+OS:PCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 3306/tcp)
+HOP RTT      ADDRESS
+1   47.84 ms 10.10.14.1
+2   49.20 ms 10.10.10.227
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr  8 20:54:56 2021 -- 1 IP address (1 host up) scanned in 57.43 seconds

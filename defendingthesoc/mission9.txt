@@ -1,0 +1,25 @@
+flag1: ssh
+flag2: 192.0.2.132
+flag3: sshd_config
+flag4: c2.m1cr0s0ft.hax
+flag5: bg.mp4
+flag6: site_backup_Jul-06-21.tar.gz
+flag7: Mateos_Santiago
+
+What was the first service to be accessed in Mission challenge 1? (flag1 = 'service name')
+
+What is the IP address of the payload on the Excel macro vba, in Mission challenge 2? (flag2 = 'IP Address')
+
+What file is used to enable the default login method in Mission challenge 3? (flag3 = 'name of the file')
+
+What is the malicious domain used in the persistant reverse shell, in Mission challenge 4? (flag4 = 'subdomain')
+
+What is the video file name running in the Hyperion website, on Mission challenge 5? (flag5 = 'video file name')
+
+What is the name of the oldest site backup in the backup folder, in Mission challenge 6? (flag6 = 'backup file name')
+
+What is the name of the attacker, found on Mission challenge 8? (flag7 = 'FirstName'_'LastName')
+
+Flag format: flag{flag1_flag2_flag3_flag4_flag5_flag6_flag7}
+
+flag{ssh_192.0.2.132_sshd_config_c2.m1cr0s0ft.hax_bg.mp4_site_backup_Jul-06-21.tar.gz_Mateos_Santiago}

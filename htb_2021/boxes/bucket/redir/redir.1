@@ -1,0 +1,167 @@
+.Dd 01 May, 2016
+.Dt REDIR 1 SMM
+.Os
+.Sh NAME
+.Nm redir
+.Nd redirect TCP connections
+.Sh SYNOPSIS
+.Nm
+.Op Fl hinpsv
+.Op Fl b Ar IP
+.Op Fl f Ar TYPE
+.Op Fl I Ar NAME
+.Op Fl l Ar LEVEL
+.Op Fl m Ar BPS
+.Op Fl o Ar <1,2,3>
+.Op Fl t Ar SEC
+.Op Fl w Ar MSEC
+.Op Fl x Ar HOST:PORT
+.Op Fl z Ar BYTES
+.Ar [SRC]:PORT
+.Ar [DST]:PORT
+.Sh DESCRIPTION
+.Nm
+redirects TCP connections coming in on a local port,
+.Ar [SRC]:PORT ,
+to a specified address/port combination,
+.Ar [DST]:PORT .
+Both the
+.Ar SRC
+and
+.Ar DST
+arguments can be left out,
+.Nm
+will then use
+.Ar 0.0.0.0 .
+.Pp
+.Nm
+can be run either from inetd or as a standalone daemon.  In
+.Fl -inetd
+mode the listening SRC:PORT combo is handled by another process, usually
+.Nm inetd ,
+and a connected socket is handed over to
+.Nm
+via stdin.  Hence only
+.Ar [DST]:PORT
+is required in
+.Fl -inetd
+mode.  In standalone mode
+.Nm
+can run either in the foreground,
+.Fl n ,
+or in the background, detached like a proper UNIX daemon.  This is the
+default.  When running in the foreground log messages are also printed
+to stderr, unless the
+.Fl s
+flag is given.
+.Pp
+Depending on how redir was compiled, not all options may be available.
+.Sh OPTIONS
+Mandatory arguments to long options are mandatory for short options too.
+.Bl -tag -width Ds
+.It Fl b, Fl -bind=IP
+Forces
+.Nm
+to pick a specific address to bind to when it listens for incoming
+connections.  Not applicable when running in Linux's transparent proxy
+mode,
+.Fl p .
+.It Fl h, -help
+Show built-in help text.
+.It Fl f, -ftp=TYPE
+When using
+.Nm
+for an FTP server, this will cause redir to also redirect FTP
+connections.  Type should be specified as either "port", "pasv", or
+"both", to specify what type of FTP connection to handle.  Note that
+.Fl -transproxy
+often makes one or the other (generally port) undesirable.
+.It Fl i, Fl -inetd
+Run as a process started from
+.Xr inetd 1 ,
+with the connection passed as stdin and stdout on startup.
+.It Fl I, Fl -ident=NAME
+Specify program identity (name) to be used for TCP wrapper checks and
+syslog messages.
+.It Fl l, Fl -loglevel=LEVEL
+Set log level: none, err, notice, info, debug.  Default is notice.
+.It Fl n, Fl -foreground
+Run in foreground, do not detach from controlling terminal.
+.It Fl p, Fl -transproxy
+On a Linux system with transparent proxying enabled, causes
+.Nm
+to make connections appear as if they had come from their true origin.
+See the file transproxy.txt in the distribution, and the Linux
+Documentation/networking/tproxy.txt for details.  Untested on modern
+Linux kernels.
+.It Fl s, Fl -syslog
+Log messages to syslog.  Default, except when
+.Fl n
+is enabled.
+.It Fl t, Fl -timeout=SEC
+Timeout and close the connection after SEC seconds of inactivity.
+.It Fl v
+Show program version.
+.It Fl x, Fl -connect
+Redirects connections through an HTTP proxy which supports the CONNECT
+command.  Specify the address and port of the proxy using
+.Ar [DST]:PORT .
+.Fl -connect
+requires the hostname and port which the HTTP proxy will be asked to
+connect to.
+.El
+.Sh TRAFFIC SHAPING
+The following options control traffic shaping, if
+.Nm
+is built with shaping enabled.
+.Bl -tag -width Ds
+.It Fl m, Fl -max-bandwidth=BPS
+Reduce the bandwidth to be no more than BPS bits/sec.  The algorithm is
+basic, the goal is to simulate a slow connection, so there is no peak
+acceptance.
+.It Fl o, Fl -wait-in-out=<1,2,3>
+Apply
+.Fl -max-bandwidth
+and
+.Fl -random-wait
+for input(1), output(2), or both(3).
+.It Fl w, Fl -random-wait=MSEC
+Wait between 0 and 2 x n milliseconds before each "packet".  A "packet"
+is a block of data read in one time by redir.  A "packet" size is always
+less than the bufsize (see also
+.Fl -bufsize )
+.It Fl z, Fl -bufsize=BYTES
+Set the bufsize (default 4096) in bytes.  Can be used combined with
+.Fl -max-bandwidth
+or
+.Fl -random-wait
+to simulate a slow connection.
+.El
+.Sh BUGS
+Command line syntax changed in v3.0.  Compatibility with v2.x can be
+enabled using the
+.Fl -enable-compat
+configure option.  This enables the following options:
+.Fl -laddr=ADDR
+.Fl -lport=PORT
+.Fl -caddr=ADDR
+.Fl -cport=PORT
+which in v3.0 were been replaced with
+.Ar [SRC]:PORT
+and
+.Ar [DST]:PORT .
+.Pp
+For full compatibility, using any of these options will implicitly also
+enable
+.Fl n .
+There is currently no way to tell
+.Nm
+to background itself in this mode of operation.
+.Sh SEE ALSO
+.Xr inetd 1
+.Xr uredir 1
+.Sh AUTHORS
+.Nm
+is written by Nigel Metheringham and Sam Creasey, with contributions
+from many others.  It is currently being maintained at GitHub by Joachim
+Nilsson.

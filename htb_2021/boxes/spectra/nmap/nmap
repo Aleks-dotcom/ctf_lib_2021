@@ -1,0 +1,15 @@
+# Nmap 7.60 scan initiated Thu Apr 15 22:10:14 2021 as: nmap -sS -sC -sV -oN nmap/nmap 10.10.10.229
+Nmap scan report for 10.10.10.229
+Host is up (0.044s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.1 (protocol 2.0)
+| ssh-hostkey: 
+|_  4096 52:47:de:5c:37:4f:29:0e:8e:1d:88:6e:f9:23:4d:5a (RSA)
+80/tcp   open  http    nginx 1.17.4
+|_http-server-header: nginx/1.17.4
+|_http-title: Site doesn't have a title (text/html).
+3306/tcp open  mysql   MySQL (unauthorized)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr 15 22:10:35 2021 -- 1 IP address (1 host up) scanned in 21.28 seconds

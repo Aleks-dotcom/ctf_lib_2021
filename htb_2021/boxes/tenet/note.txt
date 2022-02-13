@@ -1,0 +1,17 @@
+
+nmap: 22,80
+	80: -> wordpress site, blog
+		wpscan: -discovered users neil,protagonist
+			-tried bruteforcing with rockyou
+			-tried bruteforcing with a costum wlist
+			-random theme exploitable(needs user)
+			-one user post leads to discovery of a subdomain(virtual hosting)
+			-php serialization bug -> file upload -> shell
+			-got user www-data, creds in wp-config for neil user
+
+	22: -> used creds from a rev shell to ssh in and get user.txt
+		sudo -l: -> bash script that copies contents of a random file in /tmp it creates
+			into /root/.ssh/authorized_keys
+			-while true pasting my ssh key in /tmp/* and executing the script at the same 
+			time -> root shell -> root.txt
+			

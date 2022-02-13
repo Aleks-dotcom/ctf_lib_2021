@@ -1,0 +1,10 @@
+Welcome to the AEG challenges!
+Input password to continue:
+> Correct password! :)
+Here is the binary that is currently running on this box: 
+ 
+-------------------------------------------------------------------
+
+Proceeding to the challenge...
+
+Main is at 564c8ac56421

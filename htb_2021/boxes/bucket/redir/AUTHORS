@@ -1,0 +1,24 @@
+Credits should, logically, go to the following people:
+
+Nigel Metheringham <Nigel.Metheringham@ThePLAnet.net>
+	For taking the code I wrote and making it into a more stable
+	sensible, and usable package.
+
+Sam Creasey <sammy@oh.verio.com>
+	Original author, but this package would be vastly inferior without
+	Nigel's modifications.
+
+Damien Miller <damien@ibs.com.au>
+	Initial TCP wrappers support
+
+Thomas Osterried <thomas@x-berg.in-berlin.de>
+	Added the --bind-addr patch.
+
+Harald Holzer <harald.holzer@eunet.at>
+	Added support for FTP connection done by the client
+
+Emmanuel Chantréau <echant@maretmanu.org>
+	Added options to simulate a slow connection and to limit bandwidth
+
+Joachim Nilsson <troglobit@gmail.com>
+	Current maintainer at https://github.com/troglobit/redir

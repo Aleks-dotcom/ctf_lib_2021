@@ -1,0 +1,13 @@
+geopy
+httpx
+selenium-wire
+selenium
+imagehash
+pillow
+python-dateutil
+colorama
+chromedriver-autoinstaller
+beautifultable
+termcolor
+wayback
+bs4

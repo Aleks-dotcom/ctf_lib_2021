@@ -1,0 +1,5 @@
+break * fox_bar+86
+break *drinks_menu
+break * printf
+break * 0x7fb1eacbdc30
+

@@ -1,0 +1,10 @@
+na zacetku pointerS = sa.
+loop gre skozi nas string in potem:
+
+! naredi, da se sa, sb, sc zamaknejo idk for sure
+$ incrementa pointer sa za 1, in potem naredi njegov value = 1
++ pristeje prejsnjemu elementu trenutni element, in potem gre nazaj za 1
+- isto samo da odsteje
+, prebere naslednji char in nastavi trenuten element nanj
+. dela nekaj zelo kljucnega
+[] bomo potem 
